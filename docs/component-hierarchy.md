@@ -4,8 +4,10 @@
   - CombatTableHeader
   - CombatTableRow
     - EditableInitiativeCell
+    - EditableNameCell
     - EditableArmorCell
-    - EditableHitPointsCell
+    - EditableCurrentHPCell
+    - EditableMaxHPCell
     - EditableRowModeButtons
 - CombatTableAddHeroButton
 - CombatTableAddVillainButton

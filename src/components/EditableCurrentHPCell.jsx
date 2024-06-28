@@ -1,6 +1,6 @@
 import React from 'react'
 
-function EditableHitPointsCell({ value, isEditing }) {
+function EditableCurrentHPCell({ value, isEditing }) {
   return isEditing ? (
     <td>
         <input type="text" value={value} />
@@ -10,4 +10,4 @@ function EditableHitPointsCell({ value, isEditing }) {
   );
 }
 
-export default EditableHitPointsCell
+export default EditableCurrentHPCell
