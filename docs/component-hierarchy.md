@@ -9,3 +9,5 @@
     - EditableRowModeButtons
 - CombatTableAddHeroButton
 - CombatTableAddVillainButton
+
+<!-- TODO add Dice Roller if used -->
