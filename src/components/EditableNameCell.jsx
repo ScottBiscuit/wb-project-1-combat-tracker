@@ -7,7 +7,7 @@ function EditableNameCell({ value, isEditing }) {
     </td>
   ) : (
     <td>{value}</td>
-  )
+  );
 }
 
 export default EditableNameCell

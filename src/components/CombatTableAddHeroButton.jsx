@@ -3,8 +3,7 @@ import React from 'react'
 function CombatTableAddHeroButton() {
   return (
     <tr>
-        <td></td>
-        <td colSpan="2">
+        <td>
             <button>Add Hero!</button>
         </td>
     </tr>

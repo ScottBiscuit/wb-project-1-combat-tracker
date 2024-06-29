@@ -1,15 +1,9 @@
 import React from 'react';
-import EditableInitiativeCell from './EditableInitiativeCell';
-import EditableNameCell from './EditableNameCell'
-import EditableArmorCell from './EditableArmorCell';
-import EditableCurrentHPCell from './EditableCurrentHPCell';
-import EditableMaxHPCell from './EditableMaxHPCell'
-import EditableRowModeButtons from './EditableRowModeButtons';
+
 import CombatTableHeader from './CombatTableHeader';
+import CombatTableRow from './CombatTableRow';
 import CombatTableAddHeroButton from './CombatTableAddHeroButton';
 import CombatTableAddVillainButton from './CombatTableAddVillainButton';
-
-
 
 function CombatTable() {
   return (
@@ -18,23 +12,14 @@ function CombatTable() {
             <CombatTableHeader />
         </thead>
         <tbody>
-            <tr>
-                <EditableInitiativeCell value={20} isEditing={false} />
-                <EditableNameCell value="Macho Man" isEditing={false} />
-                <EditableArmorCell value={18} isEditing={false} />
-                <EditableCurrentHPCell value={33} isEditing={false} />
-                <EditableMaxHPCell value={40} isEditing={false} />
-                <EditableRowModeButtons isEditing={false} />
-            </tr>
-
-            <tr>
-                <EditableInitiativeCell value={16} isEditing={true} />
-                <EditableNameCell value="Big Boss Man" isEditing={true} />
-                <EditableArmorCell value={13} isEditing={true} />
-                <EditableCurrentHPCell value={30} isEditing={true} />
-                <EditableMaxHPCell value={35} isEditing={true} />
-                <EditableRowModeButtons isEditing={true} />
-            </tr>
+            <CombatTableRow 
+                initialCombatData={{ initiative: 20, name: 'Macho Man', armor: 18, currentHP: 33, maxHP: 40}}
+                initialIsEditing={false}
+            />
+            <CombatTableRow 
+                initialCombatData={{ initiative: 16, name: 'Big Boss Man', armor: 13, currentHP: 30, maxHP: 35}}
+                initialIsEditing={true}
+            />
         </tbody>
         <tfoot>
             <CombatTableAddHeroButton />
