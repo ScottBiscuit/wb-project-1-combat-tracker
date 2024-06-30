@@ -2,11 +2,9 @@ import React from 'react'
 
 function CombatTableAddVillainButton({ onClick }) {
   return (
-    <tr>
-        <td>
-            <button onClick={onClick}>Add Villain!</button>
+        <td colSpan='3'>
+            <button id='villainBtn' onClick={onClick}>Add Villain!</button>
         </td>
-    </tr>
   )
 }
 

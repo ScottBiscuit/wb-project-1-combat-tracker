@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+table {
+  background-color: #415a77;
+  padding: 0.6em 1.2em;
+  border-radius: 10px;
+  
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

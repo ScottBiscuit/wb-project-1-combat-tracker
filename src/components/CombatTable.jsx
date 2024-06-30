@@ -9,8 +9,13 @@ import axios from 'axios';
 function CombatTable({initialCombatList}) {
     const [combatList, setCombatList] = useState(initialCombatList);
 
-    const addCombatRow = async (id) => {
-      const { data } = await axios.post('/api/combat', { name: 'Name' });
+    const addCombatRowHero = async (id) => {
+      const { data } = await axios.post('/api/combat', { name: 'Hero', hero: true });
+      const newCombat = { ...data, isEditing: true };
+      setCombatList([...combatList, newCombat]);
+    };
+      const addCombatRowVillain = async (id) => {
+        const { data } = await axios.post('/api/combat', { name: 'Villain', hero: false });
 
       const newCombat = { ...data, isEditing: true };
       setCombatList([...combatList, newCombat]);
@@ -46,8 +51,10 @@ function CombatTable({initialCombatList}) {
             {rows}
         </tbody>
         <tfoot>
-            <CombatTableAddHeroButton onClick={addCombatRow} />
-            <CombatTableAddVillainButton onClick={addCombatRow} />
+            <tr>
+            <CombatTableAddHeroButton onClick={addCombatRowHero} />
+            <CombatTableAddVillainButton onClick={addCombatRowVillain} />
+            </tr>
         </tfoot>
     </table>
   );

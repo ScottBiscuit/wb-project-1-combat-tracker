@@ -36,7 +36,7 @@ const TEST_DATA = [
         initiative: +(initiative) || 0,
         name: name || '',
         armor: +(armor) || 0,
-        currentHP: +(currentHP) || maxHP,
+        currentHP: +(currentHP) || 0,
         maxHP: +(maxHP) || 0,
         hero: hero || true,
     };

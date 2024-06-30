@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #1d3557;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -49,10 +49,18 @@ button {
 button:hover {
   border-color: #646cff;
 }
+#heroBtn:hover {
+  border-color: #4fdd37;
+}
+#villainBtn:hover {
+  border-color: rgb(207, 33, 33)
+}
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+
 
 @media (prefers-color-scheme: light) {
   :root {
