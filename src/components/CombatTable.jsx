@@ -1,32 +1,57 @@
-import React from 'react';
-
-import CombatTableHeader from './CombatTableHeader';
+import React, { useState } from 'react';
 import CombatTableRow from './CombatTableRow';
+import CombatTableHeader from './CombatTableHeader';
 import CombatTableAddHeroButton from './CombatTableAddHeroButton';
 import CombatTableAddVillainButton from './CombatTableAddVillainButton';
+import generateId from '../utils/idGenerator.js';
 
-function CombatTable() {
+function CombatTable({initialCombatList}) {
+    const [combatList, setCombatList] = useState(initialCombatList);
+
+    const addCombatRow = () => {
+        const newCombatList = [...combatList];
+        newCombatList.push({
+            id: generateId(),
+            initiative: '',
+            name: 'Name',
+            armor: '',
+            currentHP: '',
+            maxHP: '',
+            isEditing: true,
+        });
+        setCombatList(newCombatList);
+    };
+
+    const deleteCombatRow = (id) => {
+        const newCombatList = [...combatList];
+        const index = newCombatList.findIndex((combat) => combat.id === id);
+        newCombatList.splice(index, 1);
+        setCombatList(newCombatList);
+    }
+
+    const rows = combatList.map(({ id, initiative, name, armor, currentHP, maxHP, isEditing}) => (
+            <CombatTableRow 
+            key={id}
+            initialCombatData={{initiative, name, armor, currentHP, maxHP}}
+            initialIsEditing={isEditing}
+            onDeleteRow={() => deleteCombatRow(id)}
+            />
+        ));
+
   return (
     <table>
         <thead>
             <CombatTableHeader />
         </thead>
         <tbody>
-            <CombatTableRow 
-                initialCombatData={{ initiative: 20, name: 'Macho Man', armor: 18, currentHP: 33, maxHP: 40}}
-                initialIsEditing={false}
-            />
-            <CombatTableRow 
-                initialCombatData={{ initiative: 16, name: 'Big Boss Man', armor: 13, currentHP: 30, maxHP: 35}}
-                initialIsEditing={true}
-            />
+            {rows}
         </tbody>
         <tfoot>
-            <CombatTableAddHeroButton />
-            <CombatTableAddVillainButton />
+            <CombatTableAddHeroButton onClick={addCombatRow} />
+            <CombatTableAddVillainButton onClick={addCombatRow} />
         </tfoot>
     </table>
-  )
+  );
 }
 
 export default CombatTable

@@ -1,16 +1,16 @@
 import React from 'react'
 
-function EditableRowModeButtons({ isEditing }) {
+function EditableRowModeButtons({ isEditing, onEditClick, onSaveClick, onDeleteClick }) {
   return isEditing ? (
     <td>
-        <button>Save</button>
+        <button onClick={onSaveClick}>Save</button>
     </td>
   ) : (
     <td>
-        <button>Del</button>
-        <button>Edit</button>
+        <button onClick={onDeleteClick}>Del</button>
+        <button onClick={onEditClick}>Edit</button>
     </td>
   );
 }
 
-export default EditableRowModeButtons
+export default EditableRowModeButtons;

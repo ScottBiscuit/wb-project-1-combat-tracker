@@ -1,10 +1,10 @@
 import React from 'react'
 
-function CombatTableAddVillainButton() {
+function CombatTableAddVillainButton({ onClick }) {
   return (
     <tr>
         <td>
-            <button>Add Villain!</button>
+            <button onClick={onClick}>Add Villain!</button>
         </td>
     </tr>
   )
