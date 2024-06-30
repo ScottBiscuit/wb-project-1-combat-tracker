@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, {useState} from 'react'
 import EditableRowModeButtons from './EditableRowModeButtons';
 import EditableInitiativeCell from './EditableInitiativeCell';
@@ -17,7 +18,23 @@ function CombatTableRow({ initialCombatData, initialIsEditing, onDeleteRow }) {
     const [maxHP, setMaxHP] = useState(initialCombatData.maxHP)
 
     const setEditMode = () => setIsEditing(true);
-    const setNormalMode = () => setIsEditing(false);
+    const setNormalMode = async () => {
+        const { data } = await axios.put(`/api/combat/${initialCombatData.id}`, {
+            initiative,
+            name,
+            armor,
+            currentHP,
+            maxHP,
+        });
+        if (!data.error) {
+            setInitiative(data.initiative);
+            setName(data.name);
+            setArmor(data.armor);
+            setCurrentHP(data.currentHP);
+            setMaxHP(data.maxHP);
+        }
+        setIsEditing(false);
+    };
 
   return (
     <tr>
