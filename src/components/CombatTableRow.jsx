@@ -6,6 +6,7 @@ import EditableNameCell from './EditableNameCell'
 import EditableArmorCell from './EditableArmorCell';
 import EditableCurrentHPCell from './EditableCurrentHPCell';
 import EditableMaxHPCell from './EditableMaxHPCell'
+import EditableRowDeleteButton from './EditableRowDeleteButton';
 
 
 function CombatTableRow({ initialCombatData, initialIsEditing, onDeleteRow }) {
@@ -38,6 +39,11 @@ function CombatTableRow({ initialCombatData, initialIsEditing, onDeleteRow }) {
 
   return (
     <tr>
+        <EditableRowDeleteButton 
+        onDeleteClick={onDeleteRow}
+        isEditing={isEditing}
+        onSaveClick={setNormalMode}
+        />
         <EditableInitiativeCell 
         value={initiative} 
         isEditing={isEditing}
@@ -67,7 +73,7 @@ function CombatTableRow({ initialCombatData, initialIsEditing, onDeleteRow }) {
         isEditing={isEditing} 
         onEditClick={setEditMode}
         onSaveClick={setNormalMode}
-        onDeleteClick={onDeleteRow}
+
         />
     </tr>
   );

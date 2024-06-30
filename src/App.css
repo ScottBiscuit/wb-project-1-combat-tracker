@@ -11,6 +11,9 @@ table {
   border-radius: 10px;
   
 }
+th {
+  font-size: large;
+}
 
 .logo {
   height: 6em;

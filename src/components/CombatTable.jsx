@@ -33,10 +33,10 @@ function CombatTable({initialCombatList}) {
         }
     };
 
-    const rows = combatList.map(({ id, initiative, name, armor, currentHP, maxHP, isEditing}) => (
+    const rows = combatList.map(({ id, initiative, name, armor, currentHP, maxHP, hero, isEditing}) => (
             <CombatTableRow 
             key={id}
-            initialCombatData={{id, initiative, name, armor, currentHP, maxHP}}
+            initialCombatData={{id, initiative, name, armor, currentHP, maxHP, hero}}
             initialIsEditing={isEditing}
             onDeleteRow={() => deleteCombatRow(id)}
             />

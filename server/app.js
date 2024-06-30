@@ -38,7 +38,7 @@ const TEST_DATA = [
         armor: +(armor) || 0,
         currentHP: +(currentHP) || 0,
         maxHP: +(maxHP) || 0,
-        hero: hero || true,
+        hero: hero || false,
     };
     TEST_DATA.push(newItem);
     res.json(newItem);

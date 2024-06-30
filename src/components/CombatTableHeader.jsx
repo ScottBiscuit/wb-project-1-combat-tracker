@@ -3,6 +3,7 @@ import React from 'react'
 function CombatTableHeader() {
   return (
     <tr>
+        <th></th>
         <th>Initiative</th>
         <th>Name</th>
         <th>Armor Class</th>
