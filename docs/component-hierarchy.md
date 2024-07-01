@@ -9,6 +9,7 @@
     - EditableCurrentHPCell
     - EditableMaxHPCell
     - EditableRowModeButtons
+    - EditableRowDeleteButton
 - CombatTableAddHeroButton
 - CombatTableAddVillainButton
 
