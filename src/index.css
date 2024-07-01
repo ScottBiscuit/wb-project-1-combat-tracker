@@ -48,12 +48,15 @@ button {
 }
 button:hover {
   border-color: #646cff;
+  color: #646cff;
 }
 #heroBtn:hover {
   border-color: #4fdd37;
+  color: #4fdd37;
 }
 #villainBtn:hover {
-  border-color: #e01919
+  border-color: #e01919;
+  color: #e01919
 }
 button:focus,
 button:focus-visible {
